@@ -1,0 +1,169 @@
+/* ============================================
+   Processing Page Styles
+   ============================================ */
+
+.processing {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: calc(100vh - var(--navbar-height));
+  text-align: center;
+}
+
+.processing-card {
+  width: 100%;
+  max-width: 480px;
+  padding: var(--space-lg) var(--space-lg);
+  background: var(--glass-bg);
+  backdrop-filter: blur(var(--glass-blur));
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+  animation: fadeIn 0.5s ease;
+  line-height: 1.4;
+}
+
+.processing-header {
+  margin-bottom: var(--space-2xl);
+}
+
+.processing-header h2 {
+  font-size: 1.5rem;
+  margin-bottom: var(--space-sm);
+}
+
+.processing-header p {
+  color: var(--text-muted);
+  font-size: 0.9375rem;
+}
+
+/* ---- Status Feed / Steps ---- */
+.status-feed {
+  position: relative;
+  padding-left: 40px;
+  text-align: left;
+}
+
+/* Connecting line */
+.status-feed::before {
+  content: '';
+  position: absolute;
+  top: 14px;
+  left: 19px;
+  width: 1px;
+  bottom: 14px;
+  background: #1e2d3d;
+}
+
+.status-step {
+  position: relative;
+  padding: 6px 0;
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  transition: var(--transition-base);
+}
+
+/* Step indicator */
+.status-step-icon {
+  position: absolute;
+  left: -28px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 14px;
+  height: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+}
+
+.status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+
+/* Pending */
+.status-step.pending .status-step-label {
+  color: var(--text-muted);
+  opacity: 0.35;
+}
+
+.status-dot.pending {
+  background: #475569;
+}
+
+/* Active */
+.status-step.active .status-step-label {
+  color: var(--cyan);
+  opacity: 1;
+  font-weight: 500;
+}
+
+.status-dot.active {
+  background: var(--cyan);
+  box-shadow: 0 0 0 0 rgba(6, 182, 212, 0.4);
+  animation: pulse-dot 1.5s infinite;
+}
+
+@keyframes pulse-dot {
+  0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(6, 182, 212, 0.7); }
+  70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(6, 182, 212, 0); }
+  100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(6, 182, 212, 0); }
+}
+
+/* Done */
+.status-step.done .status-step-icon {
+  color: var(--success);
+}
+
+.status-step.done .status-step-label {
+  color: var(--text-secondary);
+  opacity: 0.6;
+}
+
+.status-step-label {
+  font-size: 0.9375rem;
+  transition: var(--transition-base);
+}
+
+/* ---- Error State ---- */
+.processing-error {
+  margin-top: var(--space-xl);
+  padding: var(--space-lg);
+  background: var(--error-glow);
+  border: 1px solid rgba(239, 68, 68, 0.3);
+  border-radius: var(--radius-sm);
+  animation: slideUp 0.3s ease;
+}
+
+.processing-error p {
+  color: #fca5a5;
+  margin-bottom: var(--space-md);
+  font-size: 0.9375rem;
+}
+
+.processing-error-actions {
+  display: flex;
+  gap: var(--space-md);
+  justify-content: center;
+}
+
+/* ---- Progress Bar ---- */
+.processing-progress-bar {
+  width: 100%;
+  height: 3px;
+  margin: var(--space-lg) auto 0;
+  background: #1a2332;
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.processing-progress-fill {
+  height: 100%;
+  background: #00b4d8;
+  border-radius: 2px;
+  transition: width 0.4s ease;
+}

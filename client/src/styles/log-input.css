@@ -1,0 +1,264 @@
+/* ============================================
+   Log Input Page Styles
+   ============================================ */
+
+.log-input {
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.log-input-header {
+  margin-bottom: var(--space-xl);
+  animation: slideUp 0.5s ease;
+}
+
+.log-input-header h1 {
+  font-size: 2rem;
+  margin-bottom: var(--space-sm);
+}
+
+.log-input-header p {
+  font-size: 1.0625rem;
+  color: var(--text-secondary);
+}
+
+/* ---- Upload & Textarea Section ---- */
+.log-input-main {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+  animation: slideUp 0.6s ease;
+}
+
+/* ---- Textarea ---- */
+.log-textarea-wrapper {
+  position: relative;
+}
+
+.log-textarea {
+  width: 100%;
+  min-height: 420px;
+  padding: 18px 20px;
+  background: var(--bg-input);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-md);
+  color: var(--text-primary);
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+  line-height: 1.7;
+  resize: vertical;
+  transition: var(--transition-base);
+  tab-size: 2;
+}
+
+.log-textarea:focus {
+  border-color: var(--cyan);
+  box-shadow: 0 0 0 3px var(--cyan-glow);
+  outline: none;
+}
+
+.log-textarea::placeholder {
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+}
+
+.log-textarea-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: var(--space-sm);
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+.log-textarea-meta span {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+/* ---- Top Actions Row ---- */
+.log-input-actions-row {
+  display: flex;
+  gap: var(--space-md);
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.sample-logs-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-sm);
+  padding: 10px 18px;
+  background: var(--violet-subtle);
+  border: 1px solid rgba(139, 92, 246, 0.2);
+  border-radius: var(--radius-sm);
+  color: var(--violet-light);
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: var(--transition-base);
+}
+
+.sample-logs-btn:hover {
+  background: rgba(139, 92, 246, 0.15);
+  border-color: rgba(139, 92, 246, 0.35);
+  transform: translateY(-1px);
+}
+
+/* ---- File Upload Zone ---- */
+.file-upload-zone {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-sm);
+  padding: var(--space-xl) var(--space-lg);
+  border: 1px dashed rgba(148, 163, 184, 0.3);
+  border-radius: var(--radius-md);
+  background: rgba(17, 24, 39, 0.3);
+  cursor: pointer;
+  transition: var(--transition-base);
+  text-align: center;
+  min-height: 100px;
+}
+
+.file-upload-zone:hover {
+  border-color: rgba(6, 182, 212, 0.3);
+  background: rgba(6, 182, 212, 0.03);
+}
+
+.file-upload-zone.dragover {
+  border-color: var(--cyan);
+  background: rgba(6, 182, 212, 0.08);
+  box-shadow: 0 0 20px rgba(6, 182, 212, 0.1);
+}
+
+.file-upload-zone.has-file {
+  border-color: var(--success);
+  border-style: solid;
+  background: rgba(16, 185, 129, 0.05);
+}
+
+.file-upload-icon {
+  font-size: 2rem;
+  opacity: 0.6;
+}
+
+.file-upload-text {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+}
+
+.file-upload-text strong {
+  color: var(--cyan);
+}
+
+.file-upload-hint {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+.file-upload-filename {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  font-size: 0.875rem;
+  color: var(--success);
+  font-weight: 500;
+}
+
+/* ---- Config Panel ---- */
+.log-config-panel {
+  background: var(--glass-bg);
+  backdrop-filter: blur(var(--glass-blur));
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  animation: slideUp 0.7s ease;
+}
+
+.log-config-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-md) var(--space-lg);
+  cursor: pointer;
+  user-select: none;
+  transition: var(--transition-base);
+}
+
+.log-config-header:hover {
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.log-config-header h3 {
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.log-config-toggle {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  transition: transform 0.2s ease;
+}
+
+.log-config-toggle.open {
+  transform: rotate(180deg);
+}
+
+.log-config-body {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.35s ease, padding 0.35s ease;
+}
+
+.log-config-body.open {
+  max-height: 300px;
+  padding: 0 var(--space-lg) var(--space-lg);
+}
+
+.log-config-fields {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-md);
+}
+
+/* ---- Submit Section ---- */
+.log-submit-section {
+  animation: slideUp 0.8s ease;
+  display: flex;
+  justify-content: center;
+  margin-top: var(--space-md);
+}
+
+/* ---- Validation ---- */
+.log-validation-error {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  padding: var(--space-sm) var(--space-md);
+  background: var(--error-glow);
+  border: 1px solid rgba(239, 68, 68, 0.3);
+  border-radius: var(--radius-sm);
+  color: #fca5a5;
+  font-size: 0.875rem;
+  animation: slideDown 0.3s ease;
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 768px) {
+  .log-config-fields {
+    grid-template-columns: 1fr;
+  }
+
+  .log-textarea {
+    min-height: 300px;
+  }
+}
