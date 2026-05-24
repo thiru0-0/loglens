@@ -39,6 +39,15 @@ LogLens is built as a decoupled full-stack application using **React (Vite)** on
 - **`FollowUpChat.jsx`:** Users can ask contextual follow-up questions. To ensure resilience against backend server restarts, the frontend automatically passes the entire `reportContext` back to the `/api/chat` route, ensuring the AI never loses its context memory.
 
 ---
+## Demo Video
+
+
+
+https://github.com/user-attachments/assets/4196a579-3911-4b89-b993-501933abdb4c
+
+
+
+---
 
 ## 🚀 Getting Started
 
